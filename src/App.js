@@ -11,8 +11,8 @@ import Navbar from './components/Navbar';
 function App() {
   return (
     <>
-    <MovieStateProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/react-movie-app">
+      <MovieStateProvider>
       <Navbar/>
         <Routes>
           <Route path="/" element={<Home/>}/>
@@ -20,8 +20,8 @@ function App() {
           <Route path="/upcoming" element={<UpcomingMovie/>}/>
           <Route path="/movie/:movie_id" element={<Detail/>}/>
         </Routes>
+        </MovieStateProvider>
       </BrowserRouter>
-    </MovieStateProvider>
     </>
   );
 }
